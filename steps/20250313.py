@@ -37,11 +37,10 @@ def numerical_diff(f,x,eps=1e-4):
     return (y1.data -y0.data)/ (2*eps)
 
 def f(x):
-    A = Square()
+    A = Addone()
     B = Exp()
     C = Square()
-    D = Addone()
-    return C(D(B(x)))
+    return C(A(B(x)))
 
 x = Variable(np.array(1.0))
 dy = numerical_diff(f, x)
